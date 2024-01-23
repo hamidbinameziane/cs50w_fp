@@ -1,0 +1,20 @@
+{% extends "read/layout.html" %} {% load static %} {% block body %}
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 col-md-6 offset-sm-2 offset-md-3">
+      <form class="register-form" method="post" id="r_f">
+        <h2 class="text-center text-success">Register Now</h2>
+                <hr>
+        {% csrf_token %} {% for field in form %} {{ field }} {% endfor %}
+        <hr />
+        <button type="submit" class="btn btn-success float-right">
+          Register
+        </button>
+        <p class="text-center mt-2 mb-0 float-left">
+          If you have account <a href="{% url 'log_in' %}" class="text-success">Login</a>
+        </p>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

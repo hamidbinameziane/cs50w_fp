@@ -1,0 +1,22 @@
+{% extends "read/layout.html" %} {% load static %} {% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8 col-md-6 offset-sm-2 offset-md-3">
+            <form class="register-form" method="post">
+                {% csrf_token %}
+                <h2 class="text-center text-success">Login</h2>
+                <hr>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Username" name="username" style="margin-bottom:20px">
+                  </div>
+                  <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Password" name="password" style="margin-bottom: 20px;">
+                  </div>
+                  <hr>
+                <button type="submit" class="btn btn-success float-right">Login</button>
+                <p class="text-center mt-2 mb-0 float-left">Don't have an account? <a href="{% url 'register' %}" class="text-success">Register Now</a></p>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
