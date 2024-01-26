@@ -1,57 +1,48 @@
-CONTENTS
-Git
-31
-Bitbucket
-33
-Conclusion
-38
-Chapter 3: Pages app
-39
-Initial Set Up
-39
-Templates
-42
-Class-Based Views
-44
-URLs
-45
-Add an About Page
-47
-Extending Templates
-49
-Tests
-52
-Git and Bitbucket
-54
-Local vs Production
-57
-Heroku
-57
-Additional Files
-59
-Deploy
-61
-Conclusion
-64
-Chapter 4: Message Board app
-65
-Initial Set Up
-65
-Create a database model
-68
-Activating models
-69
-Django Admin
-70
-Views/Templates/URLs
-76
-Adding new posts
-81
-Tests
-84
-Bitbucket
-89
-Heroku configuration
-90
-Heroku deployment
-92
+The Python Library Reference, Release 3.12.1
+As with add(), parameter message may be a Message instance, an email.message.Message
+instance, a string, a byte string, or a file-like object (which should be open in binary mode). If message is an
+instance of the appropriate format-specific Message subclass (e.g., if it’s an mboxMessage instance
+and this is an mbox instance), its format-specific information is used. Otherwise, the format-specific
+information of the message that currently corresponds to key is left unchanged.
+iterkeys()
+Return an iterator over all keys
+keys()
+The same as iterkeys(), except that a list is returned rather than an iterator
+itervalues()
+__iter__()
+Return an iterator over representations of all messages. The messages are represented as instances of the
+appropriate format-specific Message subclass unless a custom message factory was specified when the
+Mailbox instance was initialized.
+Note: The behavior of __iter__() is unlike that of dictionaries, which iterate over keys.
+values()
+The same as itervalues(), except that a list is returned rather than an iterator
+iteritems()
+Return an iterator over (key, message) pairs, where key is a key and message is a message representation.
+The messages are represented as instances of the appropriate format-specific Message subclass unless
+a custom message factory was specified when the Mailbox instance was initialized.
+items()
+The same as iteritems(), except that a list of pairs is returned rather than an iterator of pairs.
+get(key, default=None)
+__getitem__(key)
+Return a representation of the message corresponding to key. If no such message exists, default is returned
+if the method was called as get() and a KeyError exception is raised if the method was called
+as __getitem__(). The message is represented as an instance of the appropriate format-specific
+Message subclass unless a custom message factory was specified when the Mailbox instance was
+initialized.
+get_message(key)
+Return a representation of the message corresponding to key as an instance of the appropriate format-
+specific Message subclass, or raise a KeyError exception if no such message exists.
+get_bytes(key)
+Return a byte representation of the message corresponding to key, or raise a KeyError exception if no
+such message exists.
+New in version 3.2.
+get_string(key)
+Return a string representation of the message corresponding to key, or raise a KeyError exception if
+no such message exists. The message is processed through email.message.Message to convert it
+to a 7bit clean representation.
+get_file(key)
+Return a file-like representation of the message corresponding to key, or raise a KeyError exception if
+no such message exists. The file-like object behaves as if open in binary mode. This file should be closed
+once it is no longer needed.
+1212
+Chapter 19. Internet Data Handling

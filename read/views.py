@@ -58,9 +58,13 @@ def display(request, book_id):
 def pages(request):
     b_id = int(request.GET.get("b"))
     file = f'media/{PdfBook.objects.get(pk=b_id).book}'
-    qry = int(request.GET.get("q"))
+    qry = (int(request.GET.get("q"))) - 1
     pdf_file = fitz.open(file)
     length = len(pdf_file)
+    if qry < 0:
+        qry = 0
+    if qry >= length:
+        qry = length - 1
     page = pdf_file[qry]
     pix = page.get_pixmap(dpi=300)
     text = page.get_text()
@@ -69,7 +73,7 @@ def pages(request):
     pix.save(url)
     pathlib.Path(url_t).write_bytes(text.encode())
     
-    return JsonResponse({"image": url,"text":url_t, 'length':length }, status=201)
+    return JsonResponse({"image": url,"text":url_t, 'length':length , 'page': qry + 1}, status=201)
 
 
 def register(request):

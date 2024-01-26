@@ -1,11 +1,10 @@
 {% extends "read/layout.html" %} {% load static %} {% block body %}
       <div class="row g-0 text-left" id="pg">
-        <div class="col-md-10"> <p class="text-success text-center" style="margin-top:10px;">Page <span class="btn btn-success" id="current" style="padding: 5px; cursor: default;font-weight: bolder; border-radius: 25px;"></span> of <span class="topage" id="count"></span></p><canvas id="canvas1"></canvas></div>
+        <div class="col-md-10"> <p class="text-success text-center" style="margin-top:10px;"><a href="#" class="link-success link-offset-2 link-underline-opacity-25 link-opacity-100-hover" id="previous"><span aria-hidden="true" style="font-size: larger; margin-right: 20px;">&laquo;</span></a>Page <input type="number" value="1" id='go_page' min="1" class="btn btn-success"></span> of <span class="topage" id="count"></span><a href="#" class="link-success link-offset-2 link-underline-opacity-25 link-opacity-100-hover" id="next"><span aria-hidden="true" style="font-size:larger; margin-left: 20px;">&raquo;</span></a></p><canvas id="canvas1"></canvas></div>
         <div class="col-md-2">
-          <table class="table" style="right: 0;width: 100px; position: fixed;">
+          <table style="right: 10px;position: fixed;">
             <tr>
               <td>
-          <input type="number" value="0" id='go_page' class="btn btn-outline-success">
           </td>
         </tr>
           <tr>
