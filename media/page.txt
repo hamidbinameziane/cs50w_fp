@@ -1,34 +1,57 @@
-Django Documentation, Release 5.0.2.dev20240116191039
-Wait a minute. <Question: Question object (1)> isn’t a helpful representation of this object. Let’s fix
-that by editing the Question model (in the polls/models.py file) and adding a __str__() method to both
-Question and Choice:
-Listing 13: polls/models.py
-from django.db import models
-class Question(models.Model):
-# ...
-def __str__(self):
-return self.question_text
-class Choice(models.Model):
-# ...
-def __str__(self):
-return self.choice_text
-It’s important to add __str__() methods to your models, not only for your own convenience when deal-
-ing with the interactive prompt, but also because objects’representations are used throughout Django’s
-automatically-generated admin.
-Let’s also add a custom method to this model:
-Listing 14: polls/models.py
-import datetime
-from django.db import models
-from django.utils import timezone
-class Question(models.Model):
-# ...
-def was_published_recently(self):
-return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
-Note the addition of import datetime and from django.utils import timezone, to reference Python’s
-standard datetime module and Django’s time-zone-related utilities in django.utils.timezone, respec-
-tively. If you aren’t familiar with time zone handling in Python, you can learn more in the time zone
-support docs.
-Save these changes and start a new Python interactive shell by running python manage.py shell again:
-30
-Chapter 2.
-Getting started
+CONTENTS
+Git
+31
+Bitbucket
+33
+Conclusion
+38
+Chapter 3: Pages app
+39
+Initial Set Up
+39
+Templates
+42
+Class-Based Views
+44
+URLs
+45
+Add an About Page
+47
+Extending Templates
+49
+Tests
+52
+Git and Bitbucket
+54
+Local vs Production
+57
+Heroku
+57
+Additional Files
+59
+Deploy
+61
+Conclusion
+64
+Chapter 4: Message Board app
+65
+Initial Set Up
+65
+Create a database model
+68
+Activating models
+69
+Django Admin
+70
+Views/Templates/URLs
+76
+Adding new posts
+81
+Tests
+84
+Bitbucket
+89
+Heroku configuration
+90
+Heroku deployment
+92

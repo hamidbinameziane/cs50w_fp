@@ -1,0 +1,33 @@
+{% extends "read/layout.html" %} {% load static %} {% block body %}
+      <div class="row g-0 text-left" id="pg">
+        <div class="col-md-10"> <p class="text-success text-center" style="margin-top:10px;">Page <span class="btn btn-success" id="current" style="padding: 5px; cursor: default;font-weight: bolder; border-radius: 25px;"></span> of <span class="topage" id="count"></span></p><canvas id="canvas1"></canvas></div>
+        <div class="col-md-2">
+          <table class="table" style="right: 0;width: 100px; position: fixed;">
+            <tr>
+              <td>
+          <input type="number" value="0" id='go_page' class="btn btn-outline-success">
+          </td>
+        </tr>
+          <tr>
+            <td>
+          <button class="btn btn-outline-success" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" id="oc">Text</button>
+          </td>
+        </tr>
+        </table>
+        </div>
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header">
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+   <p id="text"></p>
+  </div>
+
+        </div>
+      </div>
+
+     
+<script src="{% static 'read/index.js' %}"></script>
+   
+{% endblock %}
