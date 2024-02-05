@@ -1,11 +1,10 @@
 #canvas1 {
     margin-left: 15px;
     margin-right: 15px;
-    width: 100%;
     border: 2px solid #198754;
     border-radius: 5px 25px 25px 5px;
     box-shadow: 0px 10px 20px rgba(25, 135, 84, 0.90);
-    background-size: 100% 100%;
+
 
 }
 
@@ -28,17 +27,30 @@ body, html {
     margin-top: 15%;
 }
 
-#oc {
+#oc, #green, #yellow, #blue, #red, #undo {
     text-align: center;
     width: 100px;
     margin-top: 10px;
     border-radius: 25px;
+    fill: #198754;
 
 }
 
-#oc:hover {
-    background-color: #EBB200;
-    color: white;
+#oc:hover, #green:hover, #yellow:hover, #blue:hover, #red:hover, #undo:hover {
+    background-color: white;
+    box-shadow: 0px 10px 20px rgba(25, 135, 84, 0.90);
+}
+
+#yellow {
+    fill: yellow;
+}
+
+#blue {
+    fill: blue;
+}
+
+#red {
+    fill: red;
 }
 
 .offcanvas {
@@ -51,15 +63,14 @@ body, html {
 #go_page {
     text-align: center;
     font-size: larger;
-    padding: 0 0 0 10px;
-    width: 80px !important;
+    padding: 0;
+    width: 60px;
     border-radius: 25px;
 
 }
 
 #go_page:hover {
     background-color: #EBB200;
-    color: white;
 }
 
 #r_f > input {
@@ -68,4 +79,10 @@ body, html {
 
 .card:hover {
     box-shadow: 0px 10px 20px rgba(25, 135, 84, 0.90);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+
 }
